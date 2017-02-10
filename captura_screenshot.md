@@ -34,9 +34,8 @@ Crie a classe abaixo:
   public void Screenshot(IWebDriver driver, string localArquivo)
   {
       ITakesScreenshot camera = driver as ITakesScreenshot;
-      Screenshot printscreen = camera.GetScreenshot();
-      printscreen.SaveAsFile(localArquivo, ImageFormat.Png);
-      screenshotsPasta = @"C:\Users\cciola\Desktop\Selenium\Evidencias\";
+      Screenshot foto = camera.GetScreenshot();
+      foto.SaveAsFile(localArquivo, ImageFormat.Png);
   }
 ```
 Nela, temos:
@@ -45,9 +44,19 @@ Nela, temos:
 - <i>foto.SaveAsFile(localArquivo, ImageFormat.Png);</i> indica o local onde o arquivo será salvo, e a extensão (no caso, .png).
 - <i>screenshotsPasta = @"C:\Users\cciola\Desktop\Selenium\Evidencias\";</i> indica o caminho da pasta na qual os arquivos de screenshot serão armazenados.
 <br>
-O próximo passo é gerar o nome do arquivo mais a extensão, e salvá-lo na pasta indicada. Isto é declarado dentro de [Setup]:
+O próximo passo é indicar o caminho da pasta dentro da classe <i>SetupTest</i>, logo após [SetUp], e depois criar outra classe para gerar o nome do arquivo mais a extensão, e salvá-lo na pasta indicada. Isto é declarado dentro de [Setup]:
 ```
-    public void capturaImagem() // Gera 
+    public void SetupTest()
+    {
+        driver = new ChromeDriver();
+        driver.Manage().Window.Maximize();
+        baseURL = "https://www.google.com.br";
+        verificationErrors = new StringBuilder();
+        screenshotsPasta = @"C:\Users\cciola\Desktop\Selenium\Evidencias";
+    }
+```    
+```        
+    public void capturaImagem()
     {
         Screenshot(driver, screenshotsPasta + "Imagem_" + contador++ + ".png");
         Thread.Sleep(500);
