@@ -14,11 +14,10 @@ NUnit Console Version 3
 NUnit Test Adapter for VS2012, VS2013 ans VS2015
 Selenium WebDriver
 Selenium WebDriver Support Classes
-Selenium.WebDriver.ChromeDriver
-Selenium.WebDriver.IEDriver
+Selenium.WebDriver.ChromeDriver //caso deseje executar testes no navegador Internet Explorer
+Selenium.WebDriver.IEDriver //caso deseje executar testes no navegador Internet Explorer
+Selenium.WebDriver.Firefox //caso deseje executar testes no navegador Internet Explorer
 Selenium.Support
-Selenium.WebDriver.ChromeDriver
-Selenium.WebDriver.IEDriver
 ```
 Na classe pública do projeto, localizada logo abaixo do [TextFixture], informe as seguintes variáveis:
 ```
@@ -26,16 +25,10 @@ Na classe pública do projeto, localizada logo abaixo do [TextFixture], informe 
     public class NomeDoProjeto
     {
         public IWebDriver driver;
-        private string baseURL;
-        public string screenshotsPasta;
-        int contador = 1;
+        private string baseURL; //variável que receberá a URL base do site a ser acessado;
+        public string screenshotsPasta; //variável que receberá o caminho da pasta em que os screenshots serão salvos;
+        int contador = 1; //variável referente ao contador da numeração dos arquivos.
 ```
-Em que:
-- <i>public IWebDriver driver;</i>
-- <i>private string baseURL;</i> é a variável que receberá a URL base do site a ser acessado;
-- <i>public string screenshotsPasta;</i> é a variável que receberá o caminho da pasta em que os screenshots serão salvos;
-- <i>int contador = 1;</i> é a variável referente ao contador da numeração dos arquivos.
-<br>
 Logo após esta classe, crie a classe abaixo:
 ```
         public void Screenshot(IWebDriver driver, string localArquivo)
@@ -110,7 +103,6 @@ namespace SeleniumTests
             ITakesScreenshot camera = driver as ITakesScreenshot;
             Screenshot foto = camera.GetScreenshot();
             foto.SaveAsFile(localArquivo, ImageFormat.Png);
-
         }
 
         [SetUp]
@@ -153,7 +145,6 @@ namespace SeleniumTests
     }
 }
 ```
-O código acessa a página base <i>www.google.com.br</i> concatenada ao endereço da URL <i>/intl/pt-BR/about/</i>, aguarda um segundo, captura um screenshot da página após meio segundo e aguarda um segundo para fechar o navegador.
-Ao acessar a pasta informada, o resultado será um arquivo com o screenshot salvo com o nome desejado, mais a numeração 1.
+O código acessa a página base <i>www.google.com.br</i> concatenada ao endereço da URL <i>/intl/pt-BR/about/</i> e captura um screenshot da página. Ao acessar a pasta informada, o resultado será um arquivo com o screenshot salvo com o nome desejado, mais a numeração.
 <br></br>
 Dúvidas me contate! carol.ciola@gmail.com
