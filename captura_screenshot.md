@@ -29,6 +29,12 @@ Na classe pública do projeto, localizada logo abaixo do [TextFixture], informe 
         public string screenshotsPasta; //variável que receberá o caminho da pasta em que os screenshots serão salvos;
         int contador = 1; //variável referente ao contador da numeração dos arquivos.
 ```
+Temos:
+- <i>public IWebDriver driver;</i> declara o IWebDriver.
+- <i>private string baseURL;</i> variável que receberá a URL base do site a ser acessado.
+- <i>public string screenshotsPasta;</i> variável que receberá o caminho da pasta em que os screenshots serão salvos.
+- <i>int contador = 1;</i> variável referente ao contador da numeração dos arquivos.
+<br></br>
 Logo após esta classe, crie a classe abaixo:
 ```
         public void Screenshot(IWebDriver driver, string localArquivo)
@@ -55,8 +61,8 @@ O próximo passo é indicar o caminho da pasta dentro da classe <i>SetupTest</i>
 ```    
 Temos:
 - <i>driver = new ChromeDriver();</i> indica o driver do navegador a ser testado (no caso, Chrome);
-- <i>driver.Manage().Window.Maximize();</i> maximiza a janela do navegador, no momento da execução do teste;
-- <i>baseURL = "https://www.google.com.br";</i> URL base a ser acessada e incrementada posteriormente com o endereço que se deseja acessar;
+- <i>driver.Manage().Window.Maximize();</i> maximiza a janela do navegador, no momento da execução do teste.
+- <i>baseURL = "https://www.google.com.br";</i> URL base a ser acessada e incrementada posteriormente com o endereço que se deseja acessar.
 - <i>screenshotsPasta</i> apresenta o caminho onde o arquivo será salvo (pasta existente).
 ```        
     public void capturaImagem()
@@ -66,7 +72,7 @@ Temos:
     }
 ```
 Temos:
-- <i>Screenshot</i> concatenando o nome do arquivo da imagem mais o incremento da variável <i>contador</i>, que servirá para numerar sequencialmente os arquivos a serem salvos;
+- <i>Screenshot</i> concatenando o nome do arquivo da imagem mais o incremento da variável <i>contador</i>, que servirá para numerar sequencialmente os arquivos a serem salvos.
 - <i>Thread.Sleep(500)</i> que conta o tempo em meio segundo para que a captura seja efetuada pelo driver.
 
 # Veja o método funcionando
