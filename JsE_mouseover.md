@@ -18,7 +18,7 @@ Selenium.WebDriver.ChromeDriver //caso deseje executar testes no navegador Inter
 Selenium.WebDriver.IEDriver //caso deseje executar testes no navegador Internet Explorer
 Selenium.WebDriver.Firefox //caso deseje executar testes no navegador Internet Explorer
 Selenium.Support
-```csharp
+```
 Na classe pública do projeto, localizada logo abaixo do [TextFixture], informe a seguinte variável:
 ```csharp
     [TestFixture]
@@ -28,11 +28,11 @@ Na classe pública do projeto, localizada logo abaixo do [TextFixture], informe 
         IJavaScriptExecutor js; // Javascript Executor
 ```
 Declare antes do código do teste, no [Test]:
-```
+```csharp
 js = (IJavaScriptExecutor)driver; //Permite executar Javascript
 ```
 No script de teste, utilizamos os seguintes comandos:
-```
+```csharp
 IWebElement menu = driver.FindElement(By.LinkText("MENU PRINCIPAL")); //link do menu principal
 js.ExecuteScript("arguments[0].onmouseover()", menu);
 Thread.Sleep(3000);
@@ -40,7 +40,7 @@ Thread.Sleep(3000);
 # Veja o método funcionando
 
 Copie e cole o código abaixo, dê um Build e execute o teste.
-```
+```csharp
 using System;
 using System.Text;
 using System.Text.RegularExpressions;
