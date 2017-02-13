@@ -1,7 +1,7 @@
 # Exibir popup com JavascriptExecutor
 
 Após criar um Unit Test Project e importar as bibliotecas abaixo:
-```
+```csharp
 NUnit
 NUnit 3 - NUnit Project Loader Extension
 NUnit 3 - NUnit V2 Framework Driver Extension
@@ -20,7 +20,7 @@ Selenium.WebDriver.Firefox //caso deseje executar testes no navegador Internet E
 Selenium.Support
 ```
 Na classe pública do projeto, localizada logo abaixo do [TextFixture], informe a seguinte variável:
-```
+```csharp
     [TestFixture]
     public class NomeDoProjeto
     {
@@ -28,11 +28,11 @@ Na classe pública do projeto, localizada logo abaixo do [TextFixture], informe 
         IJavaScriptExecutor js; // Javascript Executor
 ```
 Declare antes do código do teste, no [Test]:
-```
+```csharp
 js = (IJavaScriptExecutor)driver; //Permite executar Javascript
 ```
 No script de teste, utilizamos os seguintes comandos:
-```      
+```csharp      
 //exibe o popup com um texto fixo informado
 js.ExecuteScript("alert('Script de teste finalizado com sucesso!');"); 
 Thread.Sleep(3000);
@@ -45,7 +45,7 @@ Thread.Sleep(3000);
 # Veja o método funcionando - texto fixo
 
 Copie e cole o código abaixo, dê um Build e execute o teste.
-```
+```csharp
 using System;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -107,7 +107,7 @@ namespace SeleniumTests
 # Veja o método funcionando - texto + variável
 
 Copie e cole o código abaixo, dê um Build e execute o teste.
-```
+```csharp
 using System;
 using System.Text;
 using System.Text.RegularExpressions;
