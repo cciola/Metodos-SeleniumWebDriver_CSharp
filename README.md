@@ -8,7 +8,11 @@ O WebDriver é desenvolvido independentemente para cada navegador, e substitui o
 
 Podemos ainda utilizar algumas referências de Javascript no Webdriver, utilizando a biblioteca de solicitação Executor, a qual contém objetos e enumerações que oferecem suporte ao processamento de mensagens, solicitações, respostas, comandos, erros e exceções. É o chamado JavascriptExecutor.
 <br><br>
-
+<b>Observação:</b> os exemplos foram todos elaborados e executados em uma máquina contendo os pré-requisitos abaixo:
+- Selenium Webdriver
+- Microsoft Visual Studio TFS
+- Navegador Internet Explorer ou Chrome ou Firefox
+<br><br>
 Como ainda estou iniciando nesta ferramenta, até o momento posso contribuir com estes códigos:
 <br>
 - <a href="https://github.com/CarolCiola/SeleniumWebdriver_CSharp/blob/master/captura_screenshot.md"><b>captura_screenshot</b></a>: descreve como implementar captura de printscreen de toda a tela (ou da janela que possui o foco) nos passos do código, salvando a imagem no diretório desejado, com nome personalizado e numeração automática, para gravar as imagens sem que haja sobreposição.
