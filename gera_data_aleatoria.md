@@ -1,7 +1,7 @@
 # Gerador de data aleatória
 
 Após criar um Unit Test Project e importar as bibliotecas abaixo:
-```
+```csharp
 NUnit
 NUnit 3 - NUnit Project Loader Extension
 NUnit 3 - NUnit V2 Framework Driver Extension
@@ -21,7 +21,7 @@ Selenium.Support
 ```
 Após a classe pública do projeto, localizada logo abaixo do [TextFixture], inserimos a função que calcula e gera uma data válida de forma randômica, ou seja, datas diferentes a cada vez que o método GerarData() for declarado.
 Abaixo temos a declaração do intervalo de anos, meses e dias que serão utilizados na datetime.date:
-```
+```csharp
         //Método para gerar data de nascimento válida de forma randômica - colar dentro de [TestFixture]
         DateTime GerarData()
         {
@@ -35,13 +35,13 @@ Abaixo temos a declaração do intervalo de anos, meses e dias que serão utiliz
         }
 ```
 <b>Atenção:</b> no momento de declarar o GerarData() no [Test] para chamar o método, converter antes para string. Exemplo:
-```
+```csharp
 driver.FindElement(By.Id("MainContent_txtDataNascimento")).SendKeys(Convert.ToString(GerarData()));
 ```        
 # Veja o método funcionando
 
 Copie e cole o código abaixo, dê um Build e execute o teste.
-```
+```csharp
 using System;
 using System.Text;
 using System.Text.RegularExpressions;
