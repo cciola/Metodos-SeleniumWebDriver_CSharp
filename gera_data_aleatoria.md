@@ -14,11 +14,10 @@ NUnit Console Version 3
 NUnit Test Adapter for VS2012, VS2013 ans VS2015
 Selenium WebDriver
 Selenium WebDriver Support Classes
-Selenium.WebDriver.ChromeDriver
-Selenium.WebDriver.IEDriver
+Selenium.WebDriver.ChromeDriver //caso deseje executar testes no navegador Internet Explorer
+Selenium.WebDriver.IEDriver //caso deseje executar testes no navegador Internet Explorer
+Selenium.WebDriver.Firefox //caso deseje executar testes no navegador Internet Explorer
 Selenium.Support
-Selenium.WebDriver.ChromeDriver
-Selenium.WebDriver.IEDriver
 ```
 Após a classe pública do projeto, localizada logo abaixo do [TextFixture], inserimos a função que calcula e gera uma data válida de forma randômica, ou seja, datas diferentes a cada vez que o método GerarData() for declarado.
 Abaixo temos a declaração do intervalo de anos, meses e dias que serão utilizados na datetime.date:
@@ -127,7 +126,6 @@ namespace SeleniumTests
     }
 }
 ```
-O código abre o navegador, aguarda um segundo, exibe a mensagem "Data gerada: 00/00/0000" via JavascriptExecutor, e aguarda três segundos para fechar o navegador.
-Ao acessar a pasta informada, o resultado será um arquivo com o screenshot salvo com o nome desejado, mais a numeração.
+O código abre o navegador e exibe a mensagem "Data gerada: 00/00/0000" via JavascriptExecutor.
 <br></br>
 Dúvidas me contate! carol.ciola@gmail.com
