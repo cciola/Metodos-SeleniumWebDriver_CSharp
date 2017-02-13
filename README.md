@@ -15,11 +15,13 @@ Como ainda estou iniciando nesta ferramenta, até o momento posso contribuir com
 
 - <a href="https://github.com/CarolCiola/SeleniumWebdriver_CSharp/blob/master/gera_CPF_aleatorio.md"><b>gera_CPF_aleatorio</b></a>: descreve como implementar a geração randômica de CPF válido nos passos do código.
 
-- <a href="https://github.com/CarolCiola/SikuliIDE/blob/master/.md"><b>gera_data_aleatoria</b></a>: descreve como implementar a geração randômica de data válida nos passos do código.
+- <a href="https://github.com/CarolCiola/SeleniumWebdriver_CSharp/blob/master/gera_data_aleatoria.md"><b>gera_data_aleatoria</b></a>: descreve como implementar a geração randômica de data válida nos passos do código.
 
 - <a href="https://github.com/CarolCiola/SikuliIDE/blob/master/.md"><b>JavascriptExecutor_mouseover</b></a>: descreve como solicitar o JavascriptExecutor para executar o comando mouseover.
 
 - <a href="https://github.com/CarolCiola/SikuliIDE/blob/master/.md"><b>JavascriptExecutor_scroll</b></a>: descreve como solicitar o JavascriptExecutor para executar o comando scroll.
+
+- <a href="https://github.com/CarolCiola/SikuliIDE/blob/master/.md"><b>JavascriptExecutor_popup</b></a>: descreve como solicitar o JavascriptExecutor para exibir um popup na tela.
 <br></br>
 Qualquer dúvida me contate! carol.ciola@gmail.com
 
