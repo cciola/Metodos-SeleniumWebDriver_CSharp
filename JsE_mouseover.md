@@ -14,11 +14,10 @@ NUnit Console Version 3
 NUnit Test Adapter for VS2012, VS2013 ans VS2015
 Selenium WebDriver
 Selenium WebDriver Support Classes
-Selenium.WebDriver.ChromeDriver
-Selenium.WebDriver.IEDriver
+Selenium.WebDriver.ChromeDriver //caso deseje executar testes no navegador Internet Explorer
+Selenium.WebDriver.IEDriver //caso deseje executar testes no navegador Internet Explorer
+Selenium.WebDriver.Firefox //caso deseje executar testes no navegador Internet Explorer
 Selenium.Support
-Selenium.WebDriver.ChromeDriver
-Selenium.WebDriver.IEDriver
 ```
 Na classe pública do projeto, localizada logo abaixo do [TextFixture], informe a seguinte variável:
 ```
@@ -34,7 +33,7 @@ js = (IJavaScriptExecutor)driver; //Permite executar Javascript
 ```
 No script de teste, utilizamos os seguintes comandos:
 ```
-IWebElement menu = driver.FindElement(By.LinkText("Informe o link do menu principal"));
+IWebElement menu = driver.FindElement(By.LinkText("MENU PRINCIPAL")); //link do menu principal
 js.ExecuteScript("arguments[0].onmouseover()", menu);
 Thread.Sleep(3000);
 ```
@@ -69,7 +68,7 @@ namespace SeleniumTests
         {
             driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
-            baseURL = "http://www.seusite.com.br";
+            baseURL = "http://www.seusite.com.br"; //informe o site desejado
         }
 
         [TearDown]
@@ -94,15 +93,14 @@ namespace SeleniumTests
 
             driver.Navigate().GoToUrl(baseURL);
             Thread.Sleep(1000);
-            IWebElement menu = driver.FindElement(By.LinkText("NomeDoMenu"));
+            IWebElement menu = driver.FindElement(By.LinkText("NomeDoMenu")); //informe o nome do menu principal
             js.ExecuteScript("arguments[0].onmouseover()", menu);
             Thread.Sleep(3000);
             driver.Quit();
-
         }
     }
 }
 ```
-O código acessa a página base desejada, aguarda um segundo, posiciona o mouse sobre o menu dropdown desejado exibindo seus submenus, e aguarda três segundos para fechar o navegador.
+O código acessa a página base desejada, posiciona o mouse sobre o menu dropdown desejado e exibe seus submenus.
 <br></br>
 Dúvidas me contate! carol.ciola@gmail.com
