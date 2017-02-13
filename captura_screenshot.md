@@ -20,7 +20,7 @@ Selenium.WebDriver.Firefox //caso deseje executar testes no navegador Internet E
 Selenium.Support
 ```
 Na classe pública do projeto, localizada logo abaixo do [TextFixture], informe as seguintes variáveis:
-```
+```csharp
     [TestFixture]
     public class NomeDoProjeto
     {
@@ -36,7 +36,7 @@ Temos:
 - <i>int contador = 1;</i> variável referente ao contador da numeração dos arquivos.
 <br></br>
 Logo após esta classe, crie a classe abaixo:
-```
+```csharp
         public void Screenshot(IWebDriver driver, string localArquivo)
         {
             ITakesScreenshot camera = driver as ITakesScreenshot;
@@ -50,7 +50,7 @@ Nela, temos:
 - <i>foto.SaveAsFile(localArquivo, ImageFormat.Png);</i> indica o caminho onde o arquivo será salvo, e a extensão (no caso, .png).
 <br>
 O próximo passo é indicar o caminho da pasta dentro da classe <i>SetupTest</i>, constante em [SetUp], e depois criar outra classe para gerar o nome do arquivo mais a extensão, e salvá-lo na pasta indicada. Isto é declarado dentro de [Setup]:
-```
+```csharp
     public void SetupTest()
     {
         driver = new ChromeDriver();
@@ -64,7 +64,7 @@ Temos:
 - <i>driver.Manage().Window.Maximize();</i> maximiza a janela do navegador, no momento da execução do teste.
 - <i>baseURL = "https://www.google.com.br";</i> URL base a ser acessada e incrementada posteriormente com o endereço que se deseja acessar.
 - <i>screenshotsPasta</i> apresenta o caminho onde o arquivo será salvo (pasta existente).
-```        
+```csharp        
     public void capturaImagem()
     {
         Screenshot(driver, screenshotsPasta + "Imagem_" + contador++ + ".png");
@@ -78,7 +78,7 @@ Temos:
 # Veja o método funcionando
 
 Copie e cole o código abaixo, dê um Build e execute o teste.
-```
+```csharp
 using System;
 using System.Text;
 using System.Text.RegularExpressions;
