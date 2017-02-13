@@ -19,7 +19,7 @@ Como ainda estou iniciando nesta ferramenta, até o momento posso contribuir com
 
 - <a href="https://github.com/CarolCiola/SeleniumWebdriver_CSharp/blob/master/JsE_mouseover.md"><b>JavascriptExecutor_mouseover</b></a>: descreve como solicitar o JavascriptExecutor para executar o comando mouseover.
 
-- <a href="https://github.com/CarolCiola/SikuliIDE/blob/master/.md"><b>JavascriptExecutor_scroll</b></a>: descreve como solicitar o JavascriptExecutor para executar o comando scroll.
+- <a href="https://github.com/CarolCiola/SeleniumWebdriver_CSharp/blob/master/JsE_scroll.md"><b>JavascriptExecutor_scroll</b></a>: descreve como solicitar o JavascriptExecutor para executar o comando scroll.
 
 - <a href="https://github.com/CarolCiola/SikuliIDE/blob/master/.md"><b>JavascriptExecutor_popup</b></a>: descreve como solicitar o JavascriptExecutor para exibir um popup na tela.
 <br></br>
