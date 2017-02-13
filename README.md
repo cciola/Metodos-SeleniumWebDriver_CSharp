@@ -11,7 +11,7 @@ Podemos ainda utilizar algumas referências de Javascript no Webdriver, utilizan
 
 Como ainda estou iniciando nesta ferramenta, até o momento posso contribuir com estes códigos:
 <br>
-- <a href="https://github.com/CarolCiola/SikuliIDE/blob/master/.md"><b>captura_screenshot</b></a>: descreve como implementar captura de printscreen de toda a tela (ou da janela que possui o foco) nos passos do código, salvando a imagem no diretório desejado, com nome personalizado e numeração automática, para gravar as imagens sem que haja sobreposição.
+- <a href="https://github.com/CarolCiola/SeleniumWebdriver_CSharp/blob/master/captura_screenshot.md"><b>captura_screenshot</b></a>: descreve como implementar captura de printscreen de toda a tela (ou da janela que possui o foco) nos passos do código, salvando a imagem no diretório desejado, com nome personalizado e numeração automática, para gravar as imagens sem que haja sobreposição.
 
 - <a href="https://github.com/CarolCiola/SikuliIDE/blob/master/.md"><b>gera_CPF_aleatorio</b></a>: descreve como implementar a geração randômica de CPF válido nos passos do código.
 
