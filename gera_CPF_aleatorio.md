@@ -14,11 +14,10 @@ NUnit Console Version 3
 NUnit Test Adapter for VS2012, VS2013 ans VS2015
 Selenium WebDriver
 Selenium WebDriver Support Classes
-Selenium.WebDriver.ChromeDriver
-Selenium.WebDriver.IEDriver
+Selenium.WebDriver.ChromeDriver //caso deseje executar testes no navegador Internet Explorer
+Selenium.WebDriver.IEDriver //caso deseje executar testes no navegador Internet Explorer
+Selenium.WebDriver.Firefox //caso deseje executar testes no navegador Internet Explorer
 Selenium.Support
-Selenium.WebDriver.ChromeDriver
-Selenium.WebDriver.IEDriver
 ```
 Após a classe pública do projeto, localizada logo abaixo do [TextFixture], inserimos a função que calcula e gera o CPF válido de forma randômica, ou seja, CPFs diferentes a cada vez que o método GerarCpf() for declarado.
 ```
@@ -75,9 +74,7 @@ namespace SeleniumTests
     {
         public IWebDriver driver;
         private string baseURL;
-        public string screenshotsPasta;
         IJavaScriptExecutor js; // Javascript Executor
-        int contador = 1;
 
         //Método para gerar CPF válido de forma randômica - colar dentro de [TestFixture]
         public string GerarCpf()
@@ -107,27 +104,12 @@ namespace SeleniumTests
             return semente;
         }
 
-        //Método para capturar screenshot da tela
-        public void Screenshot(IWebDriver driver, string localArquivo)
-        {
-            ITakesScreenshot camera = driver as ITakesScreenshot;
-            Screenshot foto = camera.GetScreenshot();
-            foto.SaveAsFile(localArquivo, ImageFormat.Png);
-        }
-
         [SetUp]
         public void SetupTest()
         {
             driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
             baseURL = "https://www.google.com.br";
-            screenshotsPasta = @"C:\Users\cciola\Documents\Visual Studio 2013\Projects\TesteGit\Evidencias\";
-        }
-
-        public void capturaImagem()
-        {
-            Screenshot(driver, screenshotsPasta + "Imagem_" + contador++ + ".png");
-            Thread.Sleep(500);
         }
 
         [TearDown]
@@ -151,18 +133,13 @@ namespace SeleniumTests
 
             driver.Navigate();
             Thread.Sleep(1000);
-            capturaImagem();
             js.ExecuteScript("alert('CPF gerado: "+GerarCpf()+"');");
-            capturaImagem();
-            Thread.Sleep(5000);
+            Thread.Sleep(3000);
             driver.Quit();
         }
     }
 }
 ```
-O código abre o navegador, aguarda um segundo, exibe a mensagem "CPF gerado: 99999999999" via JavascriptExecutor, captura outro screenshot e aguarda cinco segundos para fechar o navegador.
-Ao acessar a pasta informada, o resultado será um arquivo com o screenshot salvo com o nome desejado, mais a numeração 1.
-<br></br>
-Para entender melhor os trechos deste código, vide código similar constante em <a href="https://github.com/CarolCiola/SeleniumWebdriver_CSharp/blob/master/captura_screenshot.md"><b>captura_screenshot</b></a>.
+O código abre o navegador e exibe a mensagem "CPF gerado: 99999999999" via JavascriptExecutor.
 <br></br>
 Dúvidas me contate! carol.ciola@gmail.com
