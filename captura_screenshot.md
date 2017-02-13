@@ -26,35 +26,45 @@ Na classe pública do projeto, localizada logo abaixo do [TextFixture], informe 
     public class NomeDoProjeto
     {
         public IWebDriver driver;
-        public string localArquivo;
-        int contador = 0;
+        private string baseURL;
+        public string screenshotsPasta;
+        int contador = 1;
 ```
-Crie a classe abaixo:
+Em que:
+- <i>public IWebDriver driver;</i>
+- <i>private string baseURL;</i> é a variável que receberá a URL base do site a ser acessado;
+- <i>public string screenshotsPasta;</i> é a variável que receberá o caminho da pasta em que os screenshots serão salvos;
+- <i>int contador = 1;</i> é a variável referente ao contador da numeração dos arquivos.
+<br>
+Logo após esta classe, crie a classe abaixo:
 ```
-  public void Screenshot(IWebDriver driver, string localArquivo)
-  {
-      ITakesScreenshot camera = driver as ITakesScreenshot;
-      Screenshot foto = camera.GetScreenshot();
-      foto.SaveAsFile(localArquivo, ImageFormat.Png);
-  }
+        public void Screenshot(IWebDriver driver, string localArquivo)
+        {
+            ITakesScreenshot camera = driver as ITakesScreenshot;
+            Screenshot foto = camera.GetScreenshot();
+            foto.SaveAsFile(localArquivo, ImageFormat.Png);
+        }
 ```
 Nela, temos:
 - <i>ITakesScreenshot camera = driver as ITakesScreenshot;</i> é a instrução que indica captura de screenshot atribuída à variável <i>camera</i>.
 - <i>Screenshot foto = camera.GetScreenshot();</i> indica a captura do screenshot na variável <i>foto</i> pela <i>camera</i>.
-- <i>foto.SaveAsFile(localArquivo, ImageFormat.Png);</i> indica o local onde o arquivo será salvo, e a extensão (no caso, .png).
-- <i>screenshotsPasta = @"C:\Users\cciola\Desktop\Selenium\Evidencias\";</i> indica o caminho da pasta na qual os arquivos de screenshot serão armazenados.
+- <i>foto.SaveAsFile(localArquivo, ImageFormat.Png);</i> indica o caminho onde o arquivo será salvo, e a extensão (no caso, .png).
 <br>
-O próximo passo é indicar o caminho da pasta dentro da classe <i>SetupTest</i>, logo após [SetUp], e depois criar outra classe para gerar o nome do arquivo mais a extensão, e salvá-lo na pasta indicada. Isto é declarado dentro de [Setup]:
+O próximo passo é indicar o caminho da pasta dentro da classe <i>SetupTest</i>, constante em [SetUp], e depois criar outra classe para gerar o nome do arquivo mais a extensão, e salvá-lo na pasta indicada. Isto é declarado dentro de [Setup]:
 ```
     public void SetupTest()
     {
         driver = new ChromeDriver();
         driver.Manage().Window.Maximize();
         baseURL = "https://www.google.com.br";
-        verificationErrors = new StringBuilder();
-        screenshotsPasta = @"C:\Users\cciola\Desktop\Selenium\Evidencias";
+        screenshotsPasta = @"C:\Users\cciola\Desktop\Selenium\Evidencias\";
     }
 ```    
+Temos:
+- <i>driver = new ChromeDriver();</i> indica o driver do navegador a ser testado (no caso, Chrome);
+- <i>driver.Manage().Window.Maximize();</i> maximiza a janela do navegador, no momento da execução do teste;
+- <i>baseURL = "https://www.google.com.br";</i> URL base a ser acessada e incrementada posteriormente com o endereço que se deseja acessar;
+- <i>screenshotsPasta</i> apresenta o caminho onde o arquivo será salvo (pasta existente).
 ```        
     public void capturaImagem()
     {
@@ -63,12 +73,12 @@ O próximo passo é indicar o caminho da pasta dentro da classe <i>SetupTest</i>
     }
 ```
 Temos:
-- <i>Screenshot</i> concatenando o nome do arquivo da imagem mais o incremento da variável <i>contador</i>, que servirá para numerar sequencialmente os arquivos a serem salvos.
+- <i>Screenshot</i> concatenando o nome do arquivo da imagem mais o incremento da variável <i>contador</i>, que servirá para numerar sequencialmente os arquivos a serem salvos;
 - <i>Thread.Sleep(500)</i> que conta o tempo em meio segundo para que a captura seja efetuada pelo driver.
 
 # Veja o método funcionando
 
-Copie e cole o código abaixo, dê um Build e execute.
+Copie e cole o código abaixo, dê um Build e execute o teste.
 ```
 using System;
 using System.Text;
@@ -89,11 +99,10 @@ namespace SeleniumTests
     public class NomeDoProjeto
     {
         public IWebDriver driver;
-        private StringBuilder verificationErrors;
         private string baseURL;
-        public string localArquivo;
-        private bool acceptNextAlert = true;
-        int contador = 0;
+        public string screenshotsPasta;
+        int contador = 1;
+
 
         //Método para capturar screenshot da tela
         public void Screenshot(IWebDriver driver, string localArquivo)
@@ -101,7 +110,7 @@ namespace SeleniumTests
             ITakesScreenshot camera = driver as ITakesScreenshot;
             Screenshot foto = camera.GetScreenshot();
             foto.SaveAsFile(localArquivo, ImageFormat.Png);
-            screenshotsPasta = @"C:\Users\cciola\Desktop\Selenium\Evidencias\";
+
         }
 
         [SetUp]
@@ -110,13 +119,13 @@ namespace SeleniumTests
             driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
             baseURL = "https://www.google.com.br";
-            verificationErrors = new StringBuilder();
+            screenshotsPasta = @"C:\Users\cciola\Documents\Visual Studio 2013\Projects\TesteGit\Evidencias\";
         }
 
         public void capturaImagem()
         {
-            Thread.Sleep(500);
-            Screenshot(driver, screenshotsPasta + "Imagem_" + contador++ + ".png");
+           Screenshot(driver, screenshotsPasta + "Imagem_" + contador++ + ".png");
+           Thread.Sleep(500);
         }
 
         [TearDown]
@@ -134,67 +143,17 @@ namespace SeleniumTests
 
         [Test]
 
-        public void CadastroPositivo()
+        public void NomeDoTeste()
         {
-              driver.Navigate().GoToUrl(baseURL + "/books");
-              Thread.Sleep(1000);
-              capturaImagem();
-              Thread.Sleep(1000);
+            driver.Navigate().GoToUrl(baseURL + "/intl/pt-BR/about/");
+            Thread.Sleep(1000);
+            capturaImagem();
+            Thread.Sleep(1000);         
         }
-
-        private bool IsElementPresent(By by)
-        {
-            try
-            {
-                driver.FindElement(by);
-                return true;
-            }
-            catch (NoSuchElementException)
-            {
-                return false;
-            }
-        }
-
-        private bool IsAlertPresent()
-        {
-            try
-            {
-                driver.SwitchTo().Alert();
-                return true;
-            }
-            catch (NoAlertPresentException)
-            {
-                return false;
-            }
-        }
-
-        private string CloseAlertAndGetItsText()
-        {
-            try
-            {
-                IAlert alert = driver.SwitchTo().Alert();
-                string alertText = alert.Text;
-                if (acceptNextAlert)
-                {
-                    alert.Accept();
-                }
-                else
-                {
-                    alert.Dismiss();
-                }
-                return alertText;
-            }
-            finally
-            {
-                acceptNextAlert = true;
-            }
-        }
-
-        public string screenshotsPasta { get; set; }
     }
 }
 ```
-O código acessa a página base <i>www.google.com.br</i> concatenada ao endereço da URL <i>/books</i>, e captura um screenshot da página após meio segundo.
-Ao acessar a pasta informada, resultado será o arquivo com o screenshot salvo com o nome desejado mais a numeração 1.
+O código acessa a página base <i>www.google.com.br</i> concatenada ao endereço da URL <i>/intl/pt-BR/about/</i>, aguarda um segundo, captura um screenshot da página após meio segundo e aguarda um segundo para fechar o navegador.
+Ao acessar a pasta informada, o resultado será um arquivo com o screenshot salvo com o nome desejado, mais a numeração 1.
 <br></br>
 Dúvidas me contate! carol.ciola@gmail.com
