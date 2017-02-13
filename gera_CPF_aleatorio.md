@@ -160,7 +160,9 @@ namespace SeleniumTests
     }
 }
 ```
-O código abre o navegador, aguarda um segundo, exibe a mensagem "CPF gerado: 99999999999", captura outro screenshot e aguarda cinco segundos para fechar o navegador.
+O código abre o navegador, aguarda um segundo, exibe a mensagem "CPF gerado: 99999999999" via JavascriptExecutor, captura outro screenshot e aguarda cinco segundos para fechar o navegador.
 Ao acessar a pasta informada, o resultado será um arquivo com o screenshot salvo com o nome desejado, mais a numeração 1.
+<br></br>
+Para entender melhor os trechos deste código, vide código similar constante em <a href="https://github.com/CarolCiola/SikuliIDE/blob/master/captura_screenshot.md"><b>captura_screenshot</b></a>.
 <br></br>
 Dúvidas me contate! carol.ciola@gmail.com
