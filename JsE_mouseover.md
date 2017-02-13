@@ -1,7 +1,7 @@
 # Executar mouseover (hover) com JavascriptExecutor
 
 Após criar um Unit Test Project e importar as bibliotecas abaixo:
-```
+```csharp
 NUnit
 NUnit 3 - NUnit Project Loader Extension
 NUnit 3 - NUnit V2 Framework Driver Extension
@@ -18,9 +18,9 @@ Selenium.WebDriver.ChromeDriver //caso deseje executar testes no navegador Inter
 Selenium.WebDriver.IEDriver //caso deseje executar testes no navegador Internet Explorer
 Selenium.WebDriver.Firefox //caso deseje executar testes no navegador Internet Explorer
 Selenium.Support
-```
+```csharp
 Na classe pública do projeto, localizada logo abaixo do [TextFixture], informe a seguinte variável:
-```
+```csharp
     [TestFixture]
     public class NomeDoProjeto
     {
