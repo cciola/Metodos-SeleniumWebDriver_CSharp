@@ -25,9 +25,9 @@ Na classe pública do projeto, localizada logo abaixo do [TextFixture], informe 
     public class NomeDoProjeto
     {
         public IWebDriver driver;
-        private string baseURL; //variável que receberá a URL base do site a ser acessado;
-        public string screenshotsPasta; //variável que receberá o caminho da pasta em que os screenshots serão salvos;
-        int contador = 1; //variável referente ao contador da numeração dos arquivos.
+        private string baseURL;
+        public string screenshotsPasta;
+        int contador = 1;
 ```
 Temos:
 - <i>public IWebDriver driver;</i> declara o IWebDriver.
