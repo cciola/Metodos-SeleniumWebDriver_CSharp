@@ -108,7 +108,6 @@ namespace SeleniumTests
         {
             driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
-            baseURL = "https://www.google.com.br";
         }
 
         [TearDown]
