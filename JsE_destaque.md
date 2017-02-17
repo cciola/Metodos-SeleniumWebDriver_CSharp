@@ -122,6 +122,6 @@ namespace SeleniumTests
     }
 }
 ```
-O código acima abre o navegador, acessam o site de busca do Google, destacam o campo de pesquisa e efetuam uma pesquisa.
+O código acima abre o navegador, acessa o site de busca do Google, destaca o campo de pesquisa e efetua uma pesquisa.
 <br></br>
 Dúvidas me contate! carol.ciola@gmail.com
