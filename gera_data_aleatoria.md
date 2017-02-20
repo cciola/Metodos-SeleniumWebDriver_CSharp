@@ -58,37 +58,23 @@ using System.Collections;
 namespace SeleniumTests
 {
     [TestFixture]
-    public class NomeDoProjeto
+    public class TesteGit
     {
         public IWebDriver driver;
         IJavaScriptExecutor js; // Javascript Executor
 
-        //Método para gerar CPF válido de forma randômica - colar dentro de [TestFixture]
-        public string GerarCpf()
+        //Método para gerar data de nascimento válida de forma randômica - colar dentro de [TestFixture]
+        DateTime GerarData()
         {
-            int soma = 0, resto = 0;
-            int[] multiplicador1 = new int[9] { 10, 9, 8, 7, 6, 5, 4, 3, 2 };
-            int[] multiplicador2 = new int[10] { 11, 10, 9, 8, 7, 6, 5, 4, 3, 2 };
             Random rnd = new Random();
-            string semente = rnd.Next(100000000, 999999999).ToString();
-            for (int i = 0; i < 9; i++)
-                soma += int.Parse(semente[i].ToString()) * multiplicador1[i];
-            resto = soma % 11;
-            if (resto < 2)
-                resto = 0;
-            else
-                resto = 11 - resto;
-            semente = semente + resto;
-            soma = 0;
-            for (int i = 0; i < 10; i++)
-                soma += int.Parse(semente[i].ToString()) * multiplicador2[i];
-            resto = soma % 11;
-            if (resto < 2)
-                resto = 0;
-            else
-                resto = 11 - resto;
-            semente = semente + resto;
-            return semente;
+            int ano = rnd.Next(1950, 2016);
+            int mes = rnd.Next(1, 12);
+            int dia = DateTime.DaysInMonth(ano, mes);
+            int Dia = rnd.Next(1, dia);
+            DateTime data = new DateTime(ano, mes, Dia);
+            return data;
+            /*no momento de declarar o GerarData() no [Test] para chamar o método, converter antes para string: 
+            Convert.ToString(GerarData())*/
         }
 
         [SetUp]
@@ -113,15 +99,15 @@ namespace SeleniumTests
 
         [Test]
 
-        public void NomeDoTeste()
+        public void GeraData()
         {
             js = (IJavaScriptExecutor)driver; //Permite executar Javascript
 
             driver.Navigate();
-            Thread.Sleep(1000);
-            js.ExecuteScript("alert('CPF gerado: "+GerarCpf()+"');");
+            Thread.Sleep(2000);
+            Convert.ToString(GerarData());
+            js.ExecuteScript("alert('Data gerada: " + GerarData() + "');");
             Thread.Sleep(3000);
-            driver.Quit();
         }
     }
 }
