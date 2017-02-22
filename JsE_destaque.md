@@ -48,7 +48,7 @@ No script de teste, utilizamos os seguintes comandos:
 //exibe o elemento destacado
 destaque(driver.FindElement(By.Id("informe o ID do elemento que deseja destacar")));
 ```
-# Veja o método funcionando - texto fixo
+# Veja o método funcionando
 
 Copie e cole o código abaixo, dê um Build e execute o teste.
 ```csharp
