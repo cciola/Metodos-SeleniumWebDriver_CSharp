@@ -14,9 +14,9 @@ NUnit Console Version 3
 NUnit Test Adapter for VS2012, VS2013 ans VS2015
 Selenium WebDriver
 Selenium WebDriver Support Classes
-Selenium.WebDriver.ChromeDriver //caso deseje executar testes no navegador Internet Explorer
+Selenium.WebDriver.ChromeDriver //caso deseje executar testes no navegador Chrome
 Selenium.WebDriver.IEDriver //caso deseje executar testes no navegador Internet Explorer
-Selenium.WebDriver.Firefox //caso deseje executar testes no navegador Internet Explorer
+Selenium.WebDriver.Firefox //caso deseje executar testes no navegador Firefox
 Selenium.Support
 ```
 Após a classe pública do projeto, localizada logo abaixo do [TextFixture], inserimos a função que calcula e gera o CPF válido de forma randômica, ou seja, CPFs diferentes a cada vez que o método GerarCpf() for declarado.
