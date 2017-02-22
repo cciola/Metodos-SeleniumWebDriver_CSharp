@@ -14,9 +14,9 @@ NUnit Console Version 3
 NUnit Test Adapter for VS2012, VS2013 ans VS2015
 Selenium WebDriver
 Selenium WebDriver Support Classes
-Selenium.WebDriver.ChromeDriver //caso deseje executar testes no navegador Internet Explorer
+Selenium.WebDriver.ChromeDriver //caso deseje executar testes no navegador Chrome
 Selenium.WebDriver.IEDriver //caso deseje executar testes no navegador Internet Explorer
-Selenium.WebDriver.Firefox //caso deseje executar testes no navegador Internet Explorer
+Selenium.WebDriver.Firefox //caso deseje executar testes no navegador Firefox
 Selenium.Support
 ```
 Na classe pública do projeto, localizada logo abaixo do [TextFixture], informe a seguinte variável:
