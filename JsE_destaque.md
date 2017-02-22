@@ -45,7 +45,7 @@ js = (IJavaScriptExecutor)driver; //Permite executar Javascript
 ```
 No script de teste, utilizamos os seguintes comandos:
 ```csharp      
-//exibe o popup com um texto fixo informado
+//exibe o elemento destacado
 destaque(driver.FindElement(By.Id("informe o ID do elemento que deseja destacar")));
 ```
 # Veja o método funcionando - texto fixo
