@@ -127,14 +127,16 @@ namespace SeleniumTests
             NomeDoArquivoDaClasse n = new "NomeDoArquivoDaClasse();
 
             driver.Navigate().GoToUrl(baseURL);
-            Thread.Sleep(1000);
-            driver.FindElement(By.Id("ucProdutos_txtNumeroCartao")).SendKeys(n.GerarCpf());
             Thread.Sleep(2000);
-            driver.Quit();
+
+            destaque(driver.FindElement(By.Id("sb_ifc0")));
+            driver.FindElement(By.Id("lst-ib")).Click();
+            driver.FindElement(By.Id("lst-ib")).SendKeys(n.GerarCpf());
+            Thread.Sleep(2000);
         }
     }
 }
 ```
-O código acessa a página base desejada, rola a página para baixo e depois rola a página para cima.
+O código acessa a página base (no caso www.google.com.br) e informa no campo o CPF gerado no método da classe externa.
 <br></br>
 Dúvidas me contate! carol.ciola@gmail.com
