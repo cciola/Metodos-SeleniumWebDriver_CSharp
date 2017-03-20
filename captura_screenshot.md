@@ -37,11 +37,11 @@ Temos:
 <br></br>
 Logo após esta classe, crie a classe abaixo:
 ```csharp
-        public void Screenshot(IWebDriver driver, string localArquivo)
+        public void Screenshot(IWebDriver driver, string screenshotsPasta)
         {
             ITakesScreenshot camera = driver as ITakesScreenshot;
             Screenshot foto = camera.GetScreenshot();
-            foto.SaveAsFile(localArquivo, ImageFormat.Png);
+            foto.SaveAsFile(screenshotsPasta, ImageFormat.Png);
         }
 ```
 Nela, temos:
@@ -104,11 +104,11 @@ namespace SeleniumTests
 
 
         //Método para capturar screenshot da tela
-        public void Screenshot(IWebDriver driver, string localArquivo)
+        public void Screenshot(IWebDriver driver, string screenshotsPasta)
         {
             ITakesScreenshot camera = driver as ITakesScreenshot;
             Screenshot foto = camera.GetScreenshot();
-            foto.SaveAsFile(localArquivo, ImageFormat.Png);
+            foto.SaveAsFile(screenshotsPasta, ImageFormat.Png);
         }
 
         [SetUp]
