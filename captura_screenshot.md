@@ -41,7 +41,7 @@ Logo após esta classe, crie a classe abaixo:
         {
             ITakesScreenshot camera = driver as ITakesScreenshot;
             Screenshot foto = camera.GetScreenshot();
-            foto.SaveAsFile(screenshotsPasta, ImageFormat.Png);
+            foto.SaveAsFile(screenshotsPasta, ScreenshotImageFormat.Png);
         }
 ```
 Nela, temos:
@@ -108,7 +108,7 @@ namespace SeleniumTests
         {
             ITakesScreenshot camera = driver as ITakesScreenshot;
             Screenshot foto = camera.GetScreenshot();
-            foto.SaveAsFile(screenshotsPasta, ImageFormat.Png);
+            foto.SaveAsFile(screenshotsPasta, ScreenshotImageFormat.Png);
         }
 
         [SetUp]
