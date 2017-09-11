@@ -48,7 +48,7 @@ Nela, temos:
 - <i>ITakesScreenshot camera = driver as ITakesScreenshot;</i> é a instrução que indica captura de screenshot atribuída à variável <i>camera</i>.
 - <i>Screenshot foto = camera.GetScreenshot();</i> indica a captura do screenshot na variável <i>foto</i> pela <i>camera</i>.
 - <i>foto.SaveAsFile(localArquivo, ImageFormat.Png);</i> indica o caminho onde o arquivo será salvo, e a extensão (no caso, .png).
-<br>
+<br></br>
 O próximo passo é indicar o caminho da pasta dentro da classe <i>SetupTest</i>, constante em [SetUp], e depois criar outra classe para gerar o nome do arquivo mais a extensão, e salvá-lo na pasta indicada. Isto é declarado dentro de [Setup]:
 ```csharp
     public void SetupTest()
@@ -64,6 +64,7 @@ Temos:
 - <i>driver.Manage().Window.Maximize();</i> maximiza a janela do navegador, no momento da execução do teste.
 - <i>baseURL = "https://www.google.com.br";</i> URL base a ser acessada e incrementada posteriormente com o endereço que se deseja acessar.
 - <i>screenshotsPasta</i> apresenta o caminho onde o arquivo será salvo (pasta existente).
+<br></br>
 ```csharp        
     public void capturaImagem()
     {
@@ -74,7 +75,7 @@ Temos:
 Temos:
 - <i>Screenshot</i> concatenando o nome do arquivo da imagem mais o incremento da variável <i>contador</i>, que servirá para numerar sequencialmente os arquivos a serem salvos.
 - <i>Thread.Sleep(500)</i> que conta o tempo em meio segundo para que a captura seja efetuada pelo driver.
-
+<br></br>
 # Veja o método funcionando
 
 Copie e cole o código abaixo, dê um Build e execute o teste.
