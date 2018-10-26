@@ -22,7 +22,7 @@ using NomeDoProjeto;
 ```
 No script de teste, instancie a classe:
 ```csharp
-NomeDoArquivoDaClasse n = new "NomeDoArquivoDaClasse();
+NomeDoArquivoDaClasse n = new NomeDoArquivoDaClasse();
 ```
 
 Chamando a classe no script:
