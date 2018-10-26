@@ -21,7 +21,7 @@ Selenium.Support
 ```
 Após a classe pública do projeto, localizada logo abaixo do [TextFixture], inserimos a função que calcula e gera o CPF válido de forma randômica, ou seja, CPFs diferentes a cada vez que o método GerarCpf() for declarado.
 ```csharp
-        //Método para gerar CPF válido de forma randômica - colar dentro de [TestFixture]
+        //Método para gerar CPF válido de forma randômica - declarar dentro de [TestFixture]
         public string GerarCpf()
         {
             int soma = 0, resto = 0;
@@ -75,7 +75,7 @@ namespace SeleniumTests
         private string baseURL;
         IJavaScriptExecutor js; // Javascript Executor
 
-        //Método para gerar CPF válido de forma randômica - colar dentro de [TestFixture]
+        //Método para gerar CPF válido de forma randômica - declarar dentro de [TestFixture]
         public string GerarCpf()
         {
             int soma = 0, resto = 0;
