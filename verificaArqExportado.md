@@ -72,7 +72,7 @@ Abaixo verificamos se o arquivo foi salvo na pasta Downloads, após o clique no 
                 if (p.Contains(nomeArquivo + ".pdf"))
                 {
                     existe = true;
-                    //Deleta o arquivo gerado
+
                     File.Delete(pathDownload + nomeArquivo + ".pdf");
                     break;                    
                 }
@@ -89,8 +89,8 @@ Abaixo verificamos se o arquivo foi salvo na pasta Downloads, após o clique no 
 - <b>filePaths</b> recebe o caminho do diretório onde está a pasta <b>Downloads</b>.
 - Tendo em mente que é inviável limpar todo o conteúdo da pasta <b>Downloads</b> sempre que formos executar nosso script, o <b>foreach</b> efetua a seguinte verificação: 
 para cada um dos arquivos existentes dentro da pasta Downloads (representados pela variável "<b>p</b>"), verifique se o arquivo possui o <b>nomeArquivo</b> que queremos + a extensão.
-- Caso o arquivo seja encontrado, o <b>if</b> atribui à variável <i>existe</i> o valor <b>true</b>, e depois disso, exclui o arquivo. O método retorna, então, o valor de <b>existe</b> = <b>true</b> ao script principal.
-- Caso o arquivo não seja encontrado, um outro <b>if</b> verifica se a condição de <ib>existe</b> continua sendo <b>false</ib>. Em caso positivo, fecha o navegador, pois o teste falhou. 
+- Caso o arquivo seja encontrado, o <b>if</b> atribui à variável <b>existe</b> o valor <b>true</b>, e depois disso, exclui o arquivo. O método retorna, então, o valor de <b>existe</b> = <b>true</b> ao script principal.
+- Caso o arquivo não seja encontrado, um outro <b>if</b> verifica se a condição de <ib>existe</b> continua sendo <b>false</b>. Em caso positivo, fecha o navegador, pois o teste falhou. 
 
 # principal.cs
 
