@@ -22,7 +22,7 @@ Selenium.Support
 Após a classe pública do projeto, localizada logo abaixo do [TextFixture], inserimos a função que calcula e gera uma data válida de forma randômica, ou seja, datas diferentes a cada vez que o método GerarData() for declarado.
 Abaixo temos a declaração do intervalo de anos, meses e dias que serão utilizados na datetime.date:
 ```csharp
-        //Método para gerar data de nascimento válida de forma randômica - colar dentro de [TestFixture]
+        //Método para gerar data de nascimento válida de forma randômica - declarar dentro de [TestFixture]
         DateTime GerarData()
         {
             Random rnd = new Random();
@@ -63,7 +63,7 @@ namespace SeleniumTests
         public IWebDriver driver;
         IJavaScriptExecutor js; // Javascript Executor
 
-        //Método para gerar data de nascimento válida de forma randômica - colar dentro de [TestFixture]
+        //Método para gerar data de nascimento válida de forma randômica - declarar dentro de [TestFixture]
         DateTime GerarData()
         {
             Random rnd = new Random();
