@@ -124,7 +124,7 @@ namespace SeleniumTests
         public void NomeDoTeste()
         {
 
-            NomeDoArquivoDaClasse n = new "NomeDoArquivoDaClasse();
+            NomeDoArquivoDaClasse n = new NomeDoArquivoDaClasse();
 
             driver.Navigate().GoToUrl(baseURL);
             Thread.Sleep(2000);
