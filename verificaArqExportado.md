@@ -62,7 +62,7 @@ Deletamos os arquivos já existentes na pasta que possuem o mesmo nome do arquiv
 Este é o momento em que clicamos no botão de download no sistema:
 ```csharp  
             IWebElement btnDownload = driver.FindElement(By.Id("idBotao"));
-            lnkImprimir.Click();
+            btnDownload.Click();
 ```
 Abaixo verificamos se o arquivo foi salvo na pasta Downloads, após o clique no botão.
 ```csharp  
