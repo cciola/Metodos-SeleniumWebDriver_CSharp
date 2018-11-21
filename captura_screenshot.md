@@ -1,7 +1,7 @@
 # Captura de screenshot
 
 Após criar um Unit Test Project e importar as bibliotecas abaixo:
-```
+```csharp
 NUnit
 NUnit 3 - NUnit Project Loader Extension
 NUnit 3 - NUnit V2 Framework Driver Extension
