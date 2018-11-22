@@ -11,7 +11,7 @@ NUnit 3 - Visual Studio Project Loader Extension
 NUnit Console Runner Version 3 (No Extensions)
 NUnit Console Runner Version 3 With Extensions
 NUnit Console Version 3
-NUnit Test Adapter for VS2012, VS2013 ans VS2015
+NUnit Test Adapter for VS2012, VS2013 and VS2015
 Selenium WebDriver
 Selenium WebDriver Support Classes
 Selenium.WebDriver.ChromeDriver //caso deseje executar testes no navegador Chrome
@@ -166,6 +166,6 @@ namespace SeleniumTests
     }
 }
 ```
-Ambos códigos acessam abre o navegador e exibem o popup.
+Ambos códigos abrem o navegador e exibem o popup.
 <br></br>
 Dúvidas me contate! carol.ciola@gmail.com
